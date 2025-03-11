@@ -27,7 +27,7 @@
 
 .world-map {
     position: relative;
-    background-image: url('./../images/Others/Portfolio_Map-removebg-preview.png'); 
+    background-image: url('./../images/Others/Portfolio_Map-removebg-preview.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -40,61 +40,72 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    overflow: hidden;
+    overflow: visible;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 2;
+    transform: translate(-50%, -50%);
+}
+
+.testimonial-marker:hover {
+    z-index: 100;
 }
 
 .testimonial-marker img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 .speech-bubble {
     position: absolute;
-    top: -120px;
-    left: -75px;
-    width: 200px;
+    bottom: 60px; /* Position from bottom instead of top */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 250px;
     background-color: white;
     color: #333;
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 100;
+    z-index: 1000; /* Increased z-index to ensure it appears above other elements */
     text-align: left;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    transform: translateY(10px);
-    pointer-events: none;
+    animation: fadeIn 0.3s ease-in-out;
 }
 
 .speech-bubble:after {
     content: '';
     position: absolute;
-    bottom: -10px; /* Position it at the bottom */
+    bottom: -10px;
+    top: 100%; 
     left: 50%;
     transform: translateX(-50%);
-    border-width: 10px 10px 0;
-    border-style: solid;
-    border-color: white transparent transparent;
-  }  
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+}
 
-/* Make sure this is visible on hover */
-.testimonial-marker:hover .speech-bubble {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 10px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
 
 .testimonial-quote {
     font-style: italic;
     font-size: 0.9rem;
     margin-bottom: 10px;
-    max-height: 100px;
-    overflow-y: auto;
+    /* width: 50%; */
+    /* max-height: 150px;
+    overflow-y: auto; */
 }
 
 .testimonial-name {
@@ -164,6 +175,7 @@
 }
 
 /* Media queries for responsiveness */
+/* Media queries for responsiveness */
 @media (max-width: 991px) {
     .testimonials-container {
         flex-direction: column;
@@ -180,6 +192,11 @@
     
     .world-map {
         height: 400px;
+    }
+    
+    .speech-bubble {
+        width: 300px; /* Increased from 220px */
+        bottom: 60px; /* Ensure consistent positioning */
     }
 }
 
@@ -202,11 +219,70 @@
     }
     
     .speech-bubble {
-        position: absolute;
-        top: -120px; /* Move it further up from the profile image */
-        left: -75px;
-        width: 200px;
-        z-index: 1000; /* Ensure it's above other elements */
-        /* Other styling */
+        width: 250px; /* Increased from 180px */
+        bottom: 60px; /* Use bottom instead of top for consistent positioning */
+        max-width: 90vw; /* Prevent overflow on very small screens */
+        padding: 12px; /* Slightly reduced padding */
+    }
+    
+    .testimonial-quote {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+}
+
+/* Add an additional breakpoint for very small screens */
+@media (max-width: 400px) {
+    .speech-bubble {
+        width: 220px;
+        bottom: 55px;
+    }
+    
+    .testimonial-quote {
+        font-size: 0.75rem;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .testimonials h2 {
+        font-size: 2rem;
+    }
+    
+    .booking-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .world-map {
+        height: 300px;
+    }
+    
+    .testimonial-marker {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .speech-bubble {
+        width: 250px; /* Increased from 180px */
+        bottom: 60px; /* Use bottom instead of top for consistent positioning */
+        max-width: 90vw; /* Prevent overflow on very small screens */
+        padding: 12px; /* Slightly reduced padding */
+    }
+    
+    .testimonial-quote {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+}
+
+/* Add an additional breakpoint for very small screens */
+@media (max-width: 400px) {
+    .speech-bubble {
+        width: 220px;
+        bottom: 55px;
+    }
+    
+    .testimonial-quote {
+        font-size: 0.75rem;
     }
 }

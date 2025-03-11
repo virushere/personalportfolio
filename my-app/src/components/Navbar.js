@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import logoDark from "./../images/logo/DarkGroup_1918-removebg-preview610x409.png";
 import logoLight from "./../images/logo/LightGroup_1920-removebg-preview.png";
-
+import resume from "./../files/resume/Vyas_Yash_Resume.pdf";
 // Import Font Awesome components and icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
@@ -30,7 +30,7 @@ function Navbar() {
       <div className="navbar-container">
         {/* Logo Section */}
         <div className="navbar-logo">
-          <a href="">
+          <a href="#">
             <img src={darkMode ? logoLight : logoDark} alt="Logo" />
           </a>
         </div>
@@ -38,7 +38,20 @@ function Navbar() {
         {/* Menu Items */}
         <ul className="navbar-menu">
           <li className="navbar-item">
-            <a href="#resume">Resume</a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                const link = document.createElement("a");
+                link.href = resume;
+                link.download = "Yash_Vyas_Resume.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
+              Resume
+            </a>
           </li>
           <li className="navbar-item">
             <a href="#education-and-work-experience">Education And Work</a>
@@ -79,7 +92,13 @@ function Navbar() {
           <span> | </span>
           {/* Dark Mode Toggle */}
           <button className="dark-mode-toggle" onClick={toggleDarkMode}>
-            <FontAwesomeIcon icon={darkMode ? faMoon : faSun} />
+            <DarkModeSwitch 
+              checked={darkMode}
+              onChange={toggleDarkMode}
+              size={24}
+              moonColor="#ffffff"
+              sunColor="#000000"
+            />
           </button>
         </div>
       </div>

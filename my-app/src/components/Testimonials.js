@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Testimonials.css';
 import { motion } from 'framer-motion';
 import nikitaSawantDp from './../images/Others/NikitaSawant.png';
@@ -15,7 +15,7 @@ const Testimonials = () => {
             name: "Dinesh Jain",
             company: "Adapty - An Apexon Company",
             image: dineshJainDp,
-            location: { x: 600, y: 250 }
+            position: { left: "60%", top: "50%" } // Use percentages instead of pixels
         },
         {
             id: 2,
@@ -23,7 +23,7 @@ const Testimonials = () => {
             name: "Nikita Sawant",
             company: "Adapty - An Apexon Company",
             image: nikitaSawantDp,
-            location: { x: 600, y: 200 }
+            position: { left: "60%", top: "40%" }
         },
         {
             id: 3,
@@ -31,7 +31,7 @@ const Testimonials = () => {
             name: "Trusharth Pawar",
             company: "Adapty - An Apexon Company",
             image: trusharthPawarDP,
-            location: { x: 650, y: 250 }
+            position: { left: "65%", top: "50%" }
         },
         {
             id: 4,
@@ -39,9 +39,11 @@ const Testimonials = () => {
             name: "Mayur Veer",
             company: "Eventify Application",
             image: mayurVeerDp,
-            location: { x: 100, y: 150 }
+            position: { left: "20%", top: "30%" }
         },
     ];
+
+    const [activeTestimonial, setActiveTestimonial] = useState(null);
 
     const handleClick = () => {
         window.open(url, '_blank');
@@ -78,25 +80,31 @@ const Testimonials = () => {
                             <motion.div
                                 key={testimonial.id}
                                 className="testimonial-marker"
-                                style={{ left: testimonial.location.x, top: testimonial.location.y }}
+                                style={{ 
+                                    left: testimonial.position.left, 
+                                    top: testimonial.position.top 
+                                }}
                                 variants={testimonialVariants}
-                                whileHover={{ scale: 1.2 }}
+                                onMouseEnter={() => setActiveTestimonial(testimonial.id)}
+                                onMouseLeave={() => setActiveTestimonial(null)}
                                 onClick={handleClick}
                             >
                                 <img src={testimonial.image} alt={testimonial.name} />
-                                <div className="speech-bubble">
-                                    <p className="testimonial-quote">{testimonial.quote}</p>
-                                    <p className="testimonial-name">{testimonial.name}</p>
-                                    <p className="testimonial-company">{testimonial.company}</p>
-                                </div>
+                                {activeTestimonial === testimonial.id && (
+                                    <div className="speech-bubble">
+                                        <p className="testimonial-quote">{testimonial.quote}</p>
+                                        <p className="testimonial-name">{testimonial.name}</p>
+                                        <p className="testimonial-company">{testimonial.company}</p>
+                                    </div>
+                                )}
                             </motion.div>
                         ))}
                     </motion.div>
                 </div>
                 <div className="booking-section">
-                    <h3>Let's connect, Book a meeting with me</h3>
-                    <p>Ut sed eros finibus, placerat orci id, dapibus mauris. Vestibulum consequat hendrerit lacus.</p>
-                    <button className="book-me-button">BOOK ME</button>
+                    <h3>Let's connect!</h3>
+                    <p>Have a opportunity and want to discuss, don't hesitate and book a meeting right on your finger tip!</p>
+                    <button className="book-me-button">BOOK MEETING</button>
                 </div>
             </div>
         </section>
