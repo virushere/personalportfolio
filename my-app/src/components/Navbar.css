@@ -1,0 +1,322 @@
+/* Navbar Container */
+.navbar {
+  background: linear-gradient(to right, #e3f2fd, #ffe0b2); /* Gradient background */
+  /* padding: 15px 30px; Adjust padding for spacing */
+  position: sticky; /* Stick to the top */
+  top: 0;
+  z-index: 100; /* Ensure it stays above other content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+/* Logo Section - Desktop */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 50px; /* Increased from 40px for desktop */
+  width: auto;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 767px) {
+  /* Other mobile styles... */
+  
+  .navbar-logo img {
+    height: 45px; /* Keep slightly bigger for mobile as previously defined */
+  }
+}
+
+/* Navbar Inner Container */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Center content within this width */
+  margin: 0 auto;
+}
+
+/* Logo Section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 40px; /* Adjust logo size */
+  width: auto;
+}
+
+/* Menu Items */
+.navbar-menu {
+  list-style: none; /* Remove default list styling */
+  display: flex;
+  gap: 30px; /* Equal spacing between menu items */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item a {
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Text color for menu items */
+  font-size: 16px; /* Font size for menu items */
+  font-weight: 500; /* Medium weight for better visibility */
+  transition: color 0.3s ease;
+}
+
+.navbar-item a:hover {
+  color: #ff66c4; /* Hover effect color */
+}
+
+/* Social Icons Section */
+.navbar-social {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between social icons */
+}
+
+.navbar-social a {
+  color: #333;
+  font-size: 20px; /* Icon size */
+  transition: color 0.3s ease;
+}
+
+.navbar-social a:hover {
+  color: #ff66c4; /* Hover effect for icons */
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 20px;
+  padding: 0;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  color: #ff66c4;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Large Screens (less than 1200px) */
+@media (max-width: 1199px) {
+  .navbar-container {
+    max-width: 960px;
+  }
+  
+  .navbar-menu {
+    gap: 20px;
+  }
+}
+
+/* Medium Screens (less than 992px) */
+@media (max-width: 991px) {
+  .navbar-container {
+    max-width: 720px;
+  }
+  
+  .navbar {
+    padding: 10px 20px;
+  }
+  
+  .navbar-menu {
+    gap: 15px;
+  }
+  
+  .navbar-item a {
+    font-size: 14px;
+  }
+}
+
+/* Small Screens (less than 768px) */
+@media (max-width: 767px) {
+  .navbar-container {
+    flex-wrap: wrap;
+  }
+  
+  .navbar-menu {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    padding-top: 15px;
+    gap: 10px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  
+  .navbar-logo {
+    order: 1;
+  }
+  
+  .navbar-social {
+    order: 2;
+  }
+  
+  .navbar-logo img {
+    height: 35px;
+  }
+}
+
+/* Extra Small Screens (less than 576px) */
+@media (max-width: 575px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  
+  .navbar-container {
+    justify-content: center;
+  }
+  
+  .navbar-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 15px;
+  }
+  
+  .navbar-item {
+    margin-bottom: 5px;
+  }
+  
+  .navbar-social a {
+    font-size: 18px;
+  }
+  
+  .dark-mode-toggle {
+    font-size: 18px;
+  }
+}
+
+/* For very small screens (less than 400px) */
+@media (max-width: 399px) {
+  .navbar-logo {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .navbar-social {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+}
+
+/* For mobile screens (less than 768px) */
+@media (max-width: 767px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    margin-bottom: 15px;
+  }
+  
+  .navbar-logo img {
+    height: 45px; /* Slightly bigger logo for mobile */
+  }
+  
+  .navbar-menu {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .navbar-social {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .navbar-social a, 
+  .dark-mode-toggle {
+    font-size: 22px; /* Slightly bigger icons */
+  }
+}
+
+/* Extra small screens (less than 576px) */
+@media (max-width: 575px) {
+  .navbar-menu {
+    gap: 10px;
+  }
+  
+  .navbar-item a {
+    font-size: 14px;
+  }
+}
+
+/* Logo Section - Desktop */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 90px; /* Increased from 50px for an even bigger desktop logo */
+  width: auto;
+}
+
+/* Social Icons Section */
+.navbar-social a {
+  color: #333;
+  font-size: 28px; /* Increased from 20px for larger icons */
+  transition: color 0.3s ease;
+}
+
+/* For mobile view */
+@media (max-width: 767px) {
+  .navbar-social a {
+    font-size: 28px; /* Even larger icons for mobile */
+  }
+}
+
+/* Dark Theme Styles */
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --navbar-bg: linear-gradient(to right, #1a1a2e, #16213e);
+  --card-bg: #1e1e1e;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --navbar-bg: linear-gradient(to right, #e3f2fd, #ffe0b2);
+  --card-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.navbar {
+  background: var(--navbar-bg);
+  transition: background 0.3s ease;
+}
+
+.navbar-item a, .navbar-logo a, .navbar-social a, .dark-mode-toggle {
+  color: var(--text-color);
+}
+
+/* Add transition for smooth icon change */
+.dark-mode-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover svg {
+  transform: rotate(30deg);
+}

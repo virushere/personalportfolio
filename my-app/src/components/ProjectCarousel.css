@@ -1,0 +1,235 @@
+.project-carousel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.project-carousel-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.project-card {
+  margin: 0 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: white;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.project-content p {
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.project-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-links a {
+  padding: 8px 15px;
+  background: linear-gradient(to right, #a83279, #d434fe);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.project-links a:hover {
+  transform: translateY(-2px);
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(to right, #a83279, #d434fe);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 5;
+}
+
+.prev-arrow {
+  left: -20px;
+}
+
+.next-arrow {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  .custom-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .prev-arrow {
+    left: -15px;
+  }
+
+  .next-arrow {
+    right: -15px;
+  }
+}
+
+.single-link {
+  margin: 0 auto;
+}
+
+/* Dark Mode Styles for Project Carousel */
+.dark-theme .project-carousel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-theme .project-carousel-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.dark-theme .project-card {
+  margin: 0 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: #2d2d2d;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark-theme .project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.dark-theme .project-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dark-theme .project-content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+}
+
+.dark-theme .project-content p {
+  flex-grow: 1;
+  margin-bottom: 15px;
+  color: #b0b0b0;
+}
+
+.dark-theme .project-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dark-theme .project-links a {
+  padding: 8px 15px;
+  background: linear-gradient(to right, #a83279, #d434fe);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.dark-theme .project-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(168, 50, 121, 0.4);
+}
+
+.dark-theme .custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(to right, #a83279, #d434fe);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 5;
+}
+
+.dark-theme .prev-arrow {
+  left: -20px;
+}
+
+.dark-theme .next-arrow {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  .dark-theme .custom-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .dark-theme .prev-arrow {
+    left: -15px;
+  }
+
+  .dark-theme .next-arrow {
+    right: -15px;
+  }
+}
+
+.dark-theme .single-link {
+  margin: 0 auto;
+}
+
+/* Alice Carousel specific dark mode overrides */
+.dark-theme .alice-carousel__dots {
+  margin: 15px 0 0;
+}
+
+.dark-theme .alice-carousel__dots-item {
+  background-color: #555;
+}
+
+.dark-theme .alice-carousel__dots-item.__active {
+  background-color: #d434fe;
+}

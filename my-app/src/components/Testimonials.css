@@ -1,0 +1,212 @@
+/* Testimonials.css */
+.testimonials {
+    background: linear-gradient(to bottom, #4a148c, #880e4f);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.map-container {
+    width: 60%;
+    position: relative;
+}
+
+.world-map {
+    position: relative;
+    background-image: url('./../images/Others/Portfolio_Map-removebg-preview.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+}
+
+.testimonial-marker {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.testimonial-marker img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.speech-bubble {
+    position: absolute;
+    top: -120px;
+    left: -75px;
+    width: 200px;
+    background-color: white;
+    color: #333;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Position it at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: white transparent transparent;
+  }  
+
+/* Make sure this is visible on hover */
+.testimonial-marker:hover .speech-bubble {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+.testimonial-quote {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.testimonial-name {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.testimonial-company {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.booking-section {
+    width: 35%;
+    text-align: left;
+}
+
+.booking-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.booking-section p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.book-me-button {
+    background-color: #673ab7;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.book-me-button:hover {
+    background-color: #512da8;
+}
+
+/* Dark theme styles */
+.dark-theme .testimonials {
+    background: linear-gradient(to bottom, #1a0033, #330033);
+}
+
+.dark-theme .speech-bubble {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.dark-theme .speech-bubble:after {
+    border-top-color: #2d2d2d;
+}
+
+.dark-theme .testimonial-company {
+    color: #b0b0b0;
+}
+
+.dark-theme .book-me-button {
+    background-color: #9c27b0;
+}
+
+.dark-theme .book-me-button:hover {
+    background-color: #7b1fa2;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 991px) {
+    .testimonials-container {
+        flex-direction: column;
+    }
+    
+    .map-container, .booking-section {
+        width: 100%;
+    }
+    
+    .booking-section {
+        margin-top: 40px;
+        text-align: center;
+    }
+    
+    .world-map {
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonials h2 {
+        font-size: 2rem;
+    }
+    
+    .booking-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .world-map {
+        height: 300px;
+    }
+    
+    .testimonial-marker {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .speech-bubble {
+        position: absolute;
+        top: -120px; /* Move it further up from the profile image */
+        left: -75px;
+        width: 200px;
+        z-index: 1000; /* Ensure it's above other elements */
+        /* Other styling */
+    }
+}

@@ -1,0 +1,413 @@
+.about {
+  /* padding: 80px 0; */
+  background: linear-gradient(to right, #e3f2fd, #ffe0f5);
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.about-text {
+  max-width: 45%;
+}
+
+.about-text h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.gradient-text {
+  font-size: 3.5rem;
+  background: linear-gradient(to right, #e22bb1, #3458c4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+  margin-top: 0;
+  /* Add this to ensure browser compatibility */
+  -webkit-text-fill-color: transparent;
+}
+
+
+.about-text h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #555;
+  max-width: 90%;
+}
+
+.meeting-btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  color: #333;
+  background: linear-gradient(white, white) padding-box, 
+              linear-gradient(to right, #ff66c4, #ffff00) border-box;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.meeting-btn:hover {
+  transform: scale(1.05);
+}
+
+.about-image-container {
+  position: relative;
+  width: 45%;
+  padding-top: 3%;
+}
+
+.image-frame {
+  position: relative;
+  border: 2px solid #e94e92;
+  border-radius: 5px;
+  padding: 25px;
+}
+
+.image-frame img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+}
+
+/* Cube in top right corner */
+.cube {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid #4169e1;
+  transform: perspective(100px) rotateX(20deg) rotateY(-20deg);
+  z-index: 2;
+}
+
+.cube::before, .cube::after {
+  content: '';
+  position: absolute;
+  background-color: #4169e1;
+}
+
+.cube::before {
+  width: 40px;
+  height: 40px;
+  top: -10px;
+  left: -10px;
+  opacity: 0.3;
+}
+
+.cube::after {
+  width: 40px;
+  height: 40px;
+  top: -5px;
+  left: -5px;
+  opacity: 0.6;
+}
+
+/* Zigzag on the left side */
+.zigzag {
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 150px;
+  background: linear-gradient(45deg, #4169e1 25%, transparent 25%) 0 0,
+              linear-gradient(-45deg, #4169e1 25%, transparent 25%) 0 0;
+  background-size: 10px 20px;
+  background-repeat: repeat-y;
+}
+
+/* Red dots on the right side */
+.dots-container {
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #e94e92;
+  border-radius: 50%;
+}
+
+/* Plus sign above the image */
+.plus-sign {
+  position: absolute;
+  top: -13px;
+  left: 50px;
+  color: #e94e92;
+  font-size: 40px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+/* Timeline connector
+.timeline-connector {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  width: 2px;
+  height: 80px;
+  background-color: #e94e92;
+} */
+
+/* Media Queries for Responsiveness */
+
+/* Large Devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .about-container {
+    padding: 0 30px;
+  }
+  
+  .gradient-text {
+    font-size: 3rem;
+  }
+  
+  .about-text h3 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Medium Devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .about {
+    padding: 60px 0;
+  }
+  
+  .about-container {
+    padding: 0 20px;
+  }
+  
+  .gradient-text {
+    font-size: 2.5rem;
+  }
+  
+  .about-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .about-text h3 {
+    font-size: 2rem;
+  }
+  
+  .image-frame {
+    padding: 15px;
+  }
+}
+
+/* Small Devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .about-text, .about-image-container {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .about-text {
+    margin-bottom: 50px;
+  }
+  
+  .about-text p {
+    max-width: 100%;
+  }
+  
+  .gradient-text {
+    font-size: 2.2rem;
+  }
+  
+  .about-text h3 {
+    font-size: 1.8rem;
+  }
+  
+  .image-frame {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Adjust decorative elements for mobile */
+  .zigzag {
+    left: 0;
+    height: 100px;
+  }
+  
+  .dots-container {
+    right: 0;
+  }
+  
+  .plus-sign {
+    left: 30px;
+    font-size: 30px;
+  }
+  
+  .cube {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .cube::before, .cube::after {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.timeline-connector-vertical {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  width: 2px;
+  height: 13%;
+  background-color: #e94e92;
+}
+
+/* Extra Small Devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .about {
+    padding: 40px 0;
+  }
+  
+  .about-container {
+    padding: 0 15px;
+  }
+  
+  .about-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .gradient-text {
+    font-size: 2rem;
+  }
+  
+  .about-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+  }
+  
+  .meeting-btn {
+    padding: 10px 20px;
+  }
+  
+  /* Hide some decorative elements on very small screens */
+  .zigzag {
+    display: none;
+  }
+  
+  .dots-container {
+    gap: 10px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+  
+  /* .timeline-connector {
+    height: 60px;
+  } */
+}
+
+/* Dark Mode Styles */
+.dark-theme {
+  --bg-gradient: linear-gradient(to right, #121620, #2d1a2d);
+  --text-color: #ffffff;
+  --text-secondary: #cccccc;
+  --border-color: #e94e92;
+  --cube-color: #4169e1;
+  --button-gradient: linear-gradient(to right, #ff66c4, #ffff00);
+}
+
+/* Light Mode Default Variables */
+:root {
+  --bg-gradient: linear-gradient(to right, #e3f2fd, #ffe0f5);
+  --text-color: #333;
+  --text-secondary: #555;
+  --border-color: #e94e92;
+  --cube-color: #4169e1;
+  --button-gradient: linear-gradient(to right, #ff66c4, #ffff00);
+}
+
+/* Apply Theme Variables */
+.dark-theme .about {
+  background: var(--bg-gradient);
+}
+
+.dark-theme .about-text h1,
+.dark-theme .about-text h3 {
+  color: var(--text-color);
+}
+
+.dark-theme .about-text p {
+  color: var(--text-secondary);
+}
+
+.dark-theme .meeting-btn {
+  color: var(--text-color);
+  background: linear-gradient(#2d2d2d, #2d2d2d) padding-box, 
+              var(--button-gradient) border-box;
+}
+
+.dark-theme .image-frame {
+  border-color: var(--border-color);
+}
+
+.dark-theme .cube {
+  border-color: var(--cube-color);
+}
+
+.dark-theme .cube::before,
+.dark-theme .cube::after {
+  background-color: var(--cube-color);
+}
+
+.dark-theme .zigzag {
+  background: linear-gradient(45deg, var(--cube-color) 25%, transparent 25%) 0 0,
+              linear-gradient(-45deg, var(--cube-color) 25%, transparent 25%) 0 0;
+  background-size: 10px 20px;
+  background-repeat: repeat-y;
+}
+
+.dark-theme .dot {
+  background-color: var(--border-color);
+}
+
+.dark-theme .plus-sign {
+  color: var(--border-color);
+}
+
+.dark-theme .timeline-connector-vertical {
+  background-color: var(--border-color);
+}
+
+/* Adjust gradient text for better visibility in dark mode */
+.dark-theme .gradient-text {
+  background: linear-gradient(to right, #ff8ad8, #7b8eff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
