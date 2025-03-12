@@ -32,7 +32,7 @@ function About() {
         <div className="about-text">
           <h1>Hi 👋, I'm a</h1>
           <h2 className="gradient-text">Yash Vyas</h2>
-          <h3 id="job-title"></h3>
+          <h3 id="job-title">Software Engineer</h3>
           <p>I'm Yash Vyas, a software developer dedicated to making the world a better place one line of code at a time.</p>
           <button className="meeting-btn">Book Meeting</button>
         </div>

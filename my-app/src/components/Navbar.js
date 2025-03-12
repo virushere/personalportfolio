@@ -30,7 +30,7 @@ function Navbar() {
       <div className="navbar-container">
         {/* Logo Section */}
         <div className="navbar-logo">
-          <a href="#">
+          <a href="/">
             <img src={darkMode ? logoLight : logoDark} alt="Logo" />
           </a>
         </div>
