@@ -1,0 +1,166 @@
+/* Skills.css */
+/* Light Mode Styles */
+.skills-section {
+    padding: 80px 0;
+    background-color: #f9f9f9; /* Use a very light gray */
+    color: #333;
+  }
+  
+  .skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  .skills-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .skill-category {
+    margin-bottom: 40px;
+  }
+  
+  .skill-category h3 {
+    font-size: 1.8rem;
+    color: #4a2c8f; /* Your brand purple */
+    margin-bottom: 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .skill-tag {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #333; /* Dark text for light theme tag */
+    background: linear-gradient(to right, #ffe0f5, #e3f2fd); /* Light gradient fill */
+    border-radius: 25px;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+  }
+  
+  .skill-tag:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Dark Mode Styles - Apply when .dark-theme is present */
+  .dark-theme .skills-section {
+    background-color: #121212; /* Dark background for dark theme */
+    color: #e0e0e0; /* Light text for dark theme */
+  }
+  
+  .dark-theme .skills-section h2 {
+    color: #e0e0e0;
+  }
+  
+  .dark-theme .skill-category h3 {
+    color: #bb86fc; /* Your gradient color */
+  }
+  
+  .dark-theme .skill-tag {
+    color: #fff; /* Light text for dark theme tag */
+    background: linear-gradient(to right, #e45fc1, #103297); /* Your gradient */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1199.98px) {
+    .skills-container {
+      padding: 0 30px;
+    }
+    
+    .skills-section h2 {
+      font-size: 2.2rem;
+    }
+    
+    .skill-category h3 {
+      font-size: 1.6rem;
+    }
+  }
+  
+  @media (max-width: 991.98px) {
+    .skills-section {
+      padding: 60px 0;
+    }
+    
+    .skills-container {
+      padding: 0 20px;
+    }
+    
+    .skills-section h2 {
+      font-size: 2rem;
+    }
+    
+    .skill-category h3 {
+      font-size: 1.4rem;
+    }
+    
+    .skill-tag {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .skills-section {
+      padding: 50px 0;
+    }
+    
+    .skills-container {
+      padding: 0 15px;
+    }
+    
+    .skills-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+    }
+    
+    .skill-category {
+      margin-bottom: 30px;
+    }
+    
+    .skill-category h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    
+    .skill-tags {
+      gap: 10px;
+    }
+    
+    .skill-tag {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    .skills-section {
+      padding: 40px 0;
+    }
+    
+    .skills-section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 30px;
+    }
+    
+    .skill-category h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    
+    .skill-tag {
+      font-size: 0.7rem;
+      padding: 5px 10px;
+    }
+  }
+  

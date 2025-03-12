@@ -1,0 +1,386 @@
+.education {
+  position: relative;
+  background-color: #f9f9f9;
+  padding: 100px 0;
+  overflow: hidden; /* Prevent any overflow issues */
+}
+
+.work-experience-text {
+  display: inline;
+}
+
+/* Tablet breakpoint */
+@media (min-width: 768px) and (max-width: 991px) {
+  .work-experience-text {
+    display: block; /* For tablets: text on new line */
+  }
+}
+
+/* Desktop breakpoint */
+@media (min-width: 992px) {
+  .work-experience-text {
+    display: block; /* For desktop: text on new line */
+  }
+}
+
+.education h2 {
+  text-align: left;
+  margin-bottom: 50px;
+  margin-top: 0;
+  font-size: 3.5rem;
+  background: linear-gradient(to right, #e45fc1, #103297);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Main vertical line that runs through the entire section */
+.education::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: #e94e92;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.education-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.expanded-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.expanded-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  cursor: default;
+}
+
+.expanded-description {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.timeline-content {
+  cursor: pointer;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+}
+
+/* Right side items */
+.timeline-item.right {
+  left: 50%;
+}
+
+/* Left side items */
+.timeline-item.left {
+  left: 0;
+}
+
+/* Timeline content */
+.timeline-content {
+  padding: 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  background: linear-gradient(white, white) padding-box, 
+  linear-gradient(to right, #ff66c4, #ffff00) border-box;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+/* Timeline dots */
+.timeline-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #e94e92;
+  border-radius: 50%;
+  z-index: 3;
+  top: 30px;
+}
+
+/* Position dots */
+.timeline-item.right .timeline-dot {
+  left: -10px;
+}
+
+.timeline-item.left .timeline-dot {
+  right: -10px;
+}
+
+/* Timeline content styling */
+.timeline-title {
+  color: #4a2c8f;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.timeline-location {
+  background: linear-gradient(to right, #ff66c4, #ffff00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+
+.timeline-period {
+  color: #888;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* Large screens (desktops) */
+@media screen and (max-width: 1200px) {
+  .education-container {
+    max-width: 960px;
+  }
+  
+  .timeline {
+    max-width: 960px;
+  }
+  
+  .education h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 992px) {
+  .education-container {
+    max-width: 720px;
+  }
+  
+  .timeline {
+    max-width: 720px;
+  }
+  
+  .timeline-content {
+    padding: 25px;
+  }
+  
+  .timeline-title {
+    font-size: 1.3rem;
+  }
+  
+  .education h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Small screens (mobile landscape) */
+@media screen and (max-width: 768px) {
+  .education {
+    padding: 60px 0;
+  }
+  
+  .education::before {
+    left: 31px;
+    transform: none;
+  }
+  
+  .education h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  .timeline-item.right,
+  .timeline-item.left {
+    left: 0;
+  }
+  
+  .timeline-item.right .timeline-dot,
+  .timeline-item.left .timeline-dot {
+    left: 21px;
+    right: auto;
+  }
+  
+  .timeline-content {
+    padding: 20px;
+  }
+  
+  .timeline-title {
+    font-size: 1.2rem;
+  }
+  
+  .timeline-location,
+  .timeline-period {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small screens (mobile portrait) */
+@media screen and (max-width: 576px) {
+  .education {
+    padding: 50px 0;
+  }
+  
+  .education h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  .timeline-item {
+    padding-left: 60px;
+    margin-bottom: 30px;
+  }
+  
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .timeline-item.right .timeline-dot,
+  .timeline-item.left .timeline-dot {
+    left: 23px;
+  }
+  
+  .timeline-content {
+    padding: 15px;
+  }
+  
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Very small screens */
+@media screen and (max-width: 375px) {
+  .education h2 {
+    font-size: 1.5rem;
+  }
+  
+  .timeline-item {
+    padding-left: 50px;
+  }
+  
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .timeline-item.right .timeline-dot,
+  .timeline-item.left .timeline-dot {
+    left: 24px;
+  }
+  
+  .timeline-title {
+    font-size: 1rem;
+  }
+}
+
+/* Dark Mode Styles for Education Section */
+.dark-theme .education {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Gradient heading in dark mode */
+.dark-theme .education h2 {
+  background: linear-gradient(to right, #ff8ad8, #7b8eff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Vertical timeline line */
+.dark-theme .education::before {
+  background-color: #e94e92;
+}
+
+/* Timeline content cards */
+.dark-theme .timeline-content {
+  background-color: #2d2d2d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid transparent;
+  background-image: linear-gradient(#2d2d2d, #2d2d2d), 
+                    linear-gradient(to right, #ff66c4, #ffff00);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 8px;
+}
+
+/* Timeline title */
+.dark-theme .timeline-title {
+  color: #bb86fc; /* Purple accent color */
+}
+
+/* Timeline location */
+.dark-theme .timeline-location {
+  color: #e0e0e0;
+}
+
+/* Timeline period */
+.dark-theme .timeline-period {
+  color: #b0b0b0;
+}
+
+/* Timeline dots */
+.dark-theme .timeline-dot {
+  background-color: #e94e92;
+}
+
+/* Expanded view background */
+.dark-theme .expanded-view {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Expanded content */
+.dark-theme .expanded-content {
+  background: #2d2d2d;
+  color: #ffffff;
+}
+
+/* Expanded description */
+.dark-theme .expanded-description {
+  color: #cccccc;
+}
