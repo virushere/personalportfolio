@@ -32,8 +32,8 @@ const ProjectCarousel = () => {
       title: "Portfolio Website",
       description: "Personal portfolio website built with React and CSS animations",
       image: personalPortfolio,
-      demoLink: "",
-      codeLink: ""
+      demoLink: "https://yashvyas-portfolio.netlify.app/",
+      codeLink: "https://github.com/virushere/personalportfolio"
     },
     {
       id: 4,
