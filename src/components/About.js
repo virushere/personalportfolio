@@ -34,8 +34,17 @@ function About() {
           <h2 className="gradient-text">Yash Vyas</h2>
           <h3 id="job-title">Software Engineer</h3>
           <p>I'm Yash Vyas, a software developer dedicated to making the world a better place one line of code at a time.</p>
-          <button className="meeting-btn">Book Meeting</button>
-        </div>
+          <button
+            className="meeting-btn"
+            onClick={() =>
+              window.open(
+                "https://outlook.office.com/bookwithme/user/f2b1606ca6ac412a913b0c4a74bfb085@northeastern.edu?anonymous&ep=plink",
+                "_blank"
+              )
+            }
+          >
+            Book Meeting
+          </button>        </div>
         <div className="about-image-container">
           <div className="image-frame">
             <div className="plus-sign">+</div>
