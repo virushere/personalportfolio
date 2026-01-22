@@ -1,9 +1,9 @@
 /* Skills.css */
 /* Light Mode Styles */
 .skills-section {
-    padding: 80px 0;
-    background-color: #f9f9f9; /* Use a very light gray */
-    color: #333;
+    padding: 100px 0;
+    background-color: #ffffff;
+    color: #1a1a1a;
   }
   
   .skills-container {
@@ -14,9 +14,15 @@
   
   .skills-section h2 {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     font-size: 2.5rem;
-    color: #333;
+    font-weight: 700;
+    color: #1e293b;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
   }
   
   .skill-category {
@@ -24,13 +30,18 @@
   }
   
   .skill-category h3 {
-    font-size: 1.8rem;
-    color: #4a2c8f; /* Your brand purple */
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 24px;
     text-align: left;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+  }
+  
+  .skill-category h3 svg {
+    color: #6366f1;
   }
   
   .skill-tags {
@@ -41,35 +52,57 @@
   
   .skill-tag {
     padding: 10px 20px;
-    font-size: 1rem;
-    color: #333; /* Dark text for light theme tag */
-    background: linear-gradient(to right, #ffe0f5, #e3f2fd); /* Light gradient fill */
-    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
     white-space: nowrap;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
   
   .skill-tag:hover {
-    transform: scale(1.1);
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
   }
   
   /* Dark Mode Styles - Apply when .dark-theme is present */
   .dark-theme .skills-section {
-    background-color: #121212; /* Dark background for dark theme */
-    color: #e0e0e0; /* Light text for dark theme */
+    background-color: #0f172a;
+    color: #f1f5f9;
   }
   
   .dark-theme .skills-section h2 {
-    color: #e0e0e0;
+    background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
   }
   
   .dark-theme .skill-category h3 {
-    color: #bb86fc; /* Your gradient color */
+    color: #e2e8f0;
+  }
+  
+  .dark-theme .skill-category h3 svg {
+    color: #818cf8;
   }
   
   .dark-theme .skill-tag {
-    color: #fff; /* Light text for dark theme tag */
-    background: linear-gradient(to right, #e45fc1, #103297); /* Your gradient */
+    color: #cbd5e1;
+    background: #1e293b;
+    border-color: #334155;
+  }
+  
+  .dark-theme .skill-tag:hover {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: #ffffff;
+    border-color: transparent;
   }
   
   /* Responsive Styles */
