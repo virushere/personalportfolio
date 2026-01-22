@@ -1,29 +1,34 @@
 import React from 'react';
 import './Skills.css';
 import { motion } from 'framer-motion';
-import { FaCode, FaDatabase, FaReact, FaTools } from 'react-icons/fa';
+import { FaCode, FaDatabase, FaReact, FaTools, FaCloud } from 'react-icons/fa';
 
 const Skills = () => {
   const skillSets = [
     {
       category: "Programming Languages",
-      skills: ["C#", "Java", "Python", "SQL", "TypeScript", "JavaScript"],
+      skills: ["C#", "Java", "Python", "SQL", "TypeScript", "JavaScript", "C", "C++"],
       icon: <FaCode />
     },
     {
       category: "Databases",
-      skills: ["MS SQL", "MY SQL", "Elasticsearch", "Firebase", "Mongo DB"],
+      skills: ["MS SQL", "PostgreSQL", "MySQL", "Elasticsearch", "Firebase", "MongoDB", "Hibernate"],
       icon: <FaDatabase />
     },
     {
       category: "Web Technologies",
-      skills: ["ASP .NET", "REST", "HTML", "CSS", "React", "Redux", "Node", "Express"],
+      skills: ["Spring Boot", "ASP .NET", "HTML5", "CSS", "React", "Redux", "Node.js", "Express.js", "JSP", "XML", "JSON"],
       icon: <FaReact />
     },
     {
       category: "Tools/Frameworks",
       skills: ["Git", "Jira", "SourceTree", "Postman", "Bruno", "Eureka", "Docker", "Kafka", "Prometheus", "Grafana"],
       icon: <FaTools />
+    },
+    {
+      category: "AWS Cloud Services",
+      skills: ["EC2", "CloudWatch", "DynamoDB"],
+      icon: <FaCloud />
     }
   ];
 
