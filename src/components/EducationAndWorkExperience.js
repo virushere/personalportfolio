@@ -11,15 +11,21 @@ function EducationAndWorkExperience() {
 
   const timelineItems = [
     {
+      position: "left",
+      title: "Software Development Engineer Intern",
+      location: "at Amazon, Seattle",
+      period: "Sep 2025 - Dec 2025",
+    },
+    {
       position: "right",
       title: "Masters in Information Systems",
       location: "at Northeastern University, Boston",
-      period: "Sep 2024 - Dec 2026",
+      period: "Sep 2024 - Aug 2026",
     },
     {
       position: "left",
       title: "Software Engineer",
-      location: "at Adapty - An Apexon Company",
+      location: "at Adapty - An Apexon Company, Mumbai",
       period: "Jun 2022 - May 2024",
     },
     {

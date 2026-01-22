@@ -1,6 +1,9 @@
 .about {
-  /* padding: 80px 0; */
-  background: linear-gradient(to right, #e3f2fd, #ffe0f5);
+  padding: 120px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
 }
 
 .about-container {
@@ -10,6 +13,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
+  gap: 60px;
 }
 
 .about-text {
@@ -17,51 +21,59 @@
 }
 
 .about-text h1 {
-  font-size: 2rem;
-  margin-bottom: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #64748b;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .gradient-text {
-  font-size: 3.5rem;
-  background: linear-gradient(to right, #e22bb1, #3458c4);
+  font-size: 4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   margin-top: 0;
-  /* Add this to ensure browser compatibility */
   -webkit-text-fill-color: transparent;
+  line-height: 1.1;
 }
 
 
 .about-text h3 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #1e293b;
+  font-weight: 600;
 }
 
 .about-text p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  color: #555;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  color: #475569;
   max-width: 90%;
+  font-weight: 400;
 }
 
 .meeting-btn {
-  padding: 12px 30px;
+  padding: 14px 32px;
   font-size: 1rem;
-  color: #333;
-  background: linear-gradient(white, white) padding-box, 
-              linear-gradient(to right, #ff66c4, #ffff00) border-box;
+  font-weight: 500;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   border-radius: 8px;
-  border: 2px solid transparent;
+  border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
 }
 
 .meeting-btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
 
 .about-image-container {
@@ -72,15 +84,18 @@
 
 .image-frame {
   position: relative;
-  border: 2px solid #e94e92;
-  border-radius: 5px;
-  padding: 25px;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 20px;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899) border-box;
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
 }
 
 .image-frame img {
   width: 100%;
   display: block;
-  border-radius: 5px;
+  border-radius: 12px;
 }
 
 /* Cube in top right corner */
@@ -333,22 +348,22 @@
 
 /* Dark Mode Styles */
 .dark-theme {
-  --bg-gradient: linear-gradient(to right, #121620, #2d1a2d);
-  --text-color: #ffffff;
-  --text-secondary: #cccccc;
-  --border-color: #e94e92;
-  --cube-color: #4169e1;
-  --button-gradient: linear-gradient(to right, #ff66c4, #ffff00);
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --text-color: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --border-color: #818cf8;
+  --cube-color: #a78bfa;
+  --button-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
 }
 
 /* Light Mode Default Variables */
 :root {
-  --bg-gradient: linear-gradient(to right, #e3f2fd, #ffe0f5);
-  --text-color: #333;
-  --text-secondary: #555;
-  --border-color: #e94e92;
-  --cube-color: #4169e1;
-  --button-gradient: linear-gradient(to right, #ff66c4, #ffff00);
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  --text-color: #1e293b;
+  --text-secondary: #475569;
+  --border-color: #6366f1;
+  --cube-color: #8b5cf6;
+  --button-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
 }
 
 /* Apply Theme Variables */
@@ -356,7 +371,10 @@
   background: var(--bg-gradient);
 }
 
-.dark-theme .about-text h1,
+.dark-theme .about-text h1 {
+  color: #94a3b8;
+}
+
 .dark-theme .about-text h3 {
   color: var(--text-color);
 }
@@ -366,9 +384,9 @@
 }
 
 .dark-theme .meeting-btn {
-  color: var(--text-color);
-  background: linear-gradient(#2d2d2d, #2d2d2d) padding-box, 
-              var(--button-gradient) border-box;
+  color: #ffffff;
+  background: var(--button-gradient);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
 }
 
 .dark-theme .image-frame {
@@ -405,7 +423,7 @@
 
 /* Adjust gradient text for better visibility in dark mode */
 .dark-theme .gradient-text {
-  background: linear-gradient(to right, #ff8ad8, #7b8eff);
+  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #f472b6 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
