@@ -144,6 +144,8 @@
 }
 
 .book-me-button {
+    display: inline-block;
+    text-decoration: none;
     background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
     color: white;
     padding: 14px 32px;

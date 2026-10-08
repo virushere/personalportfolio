@@ -105,23 +105,17 @@ const Testimonials = () => {
             ))}
           </motion.div>
         </div>
-        <div className="booking-section">
+        <div id="contact" className="booking-section">
           <h3>Let's connect!</h3>
           <p>
-            Have a opportunity and want to discuss, don't hesitate and book a
-            meeting right on your finger tip!
+            Have an opportunity to discuss? Send me an email.
           </p>
-          <button
+          <a
             className="book-me-button"
-            onClick={() =>
-              window.open(
-                "https://outlook.office.com/bookwithme/user/f2b1606ca6ac412a913b0c4a74bfb085@northeastern.edu?anonymous&ep=plink",
-                "_blank"
-              )
-            }
+            href="mailto:vyas.yash@northeastern.edu"
           >
-            BOOK MEETING
-          </button>
+            EMAIL ME
+          </a>
         </div>
       </div>
     </section>

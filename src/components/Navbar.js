@@ -66,7 +66,7 @@ function Navbar() {
 
           {/* GitHub Icon */}
           <a
-            href="https://github.com/virushere"
+            href="https://github.com/vyasyash-neu"
             target="_blank"
             rel="noopener noreferrer"
           >

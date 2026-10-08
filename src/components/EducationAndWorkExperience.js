@@ -15,6 +15,11 @@ function EducationAndWorkExperience() {
       title: "Software Development Engineer Intern",
       location: "at Amazon, Seattle",
       period: "Sep 2025 - Dec 2025",
+      highlights: [
+        "Built a multi-threaded Java backend service on DynamoDB that ingests feedback from 45+ AI services.",
+        "Shipped a dual-write architecture behind feature flags, with automated monitoring to catch partial-write failures.",
+        "Set up 50+ CloudWatch alarms on latency, availability, and error rates, and reached 95% test coverage with JUnit and Mockito.",
+      ],
     },
     {
       position: "right",
@@ -27,6 +32,11 @@ function EducationAndWorkExperience() {
       title: "Software Engineer",
       location: "at Adapty - An Apexon Company, Mumbai",
       period: "Jun 2022 - May 2024",
+      highlights: [
+        "Built .NET MVC backends and REST APIs for 10+ enterprise SaaS clients.",
+        "Added batch pipelines and async cron jobs that cut system latency by 25%.",
+        "Reworked Elasticsearch queries and re-indexed data, cutting search latency by 18%.",
+      ],
     },
     {
       position: "right",
@@ -104,10 +114,13 @@ function EducationAndWorkExperience() {
             <p className="timeline-period">
               {timelineItems[selectedItem].period}
             </p>
-            <p className="expanded-description">
-              Additional details about this experience would appear here when
-              expanded. Click anywhere to close this expanded view.
-            </p>
+            {timelineItems[selectedItem].highlights && (
+              <ul className="expanded-description">
+                {timelineItems[selectedItem].highlights.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            )}
           </motion.div>
         </motion.div>
       )}
