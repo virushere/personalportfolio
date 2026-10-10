@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import './About.css';
 import profileImage from './../images/personals/DP.jpg';
 import Typewriter from 'typewriter-effect/dist/core';
-import resume from './../files/resume/Vyas_Yash_Resume.pdf';
 
 function About() {
   const typewriterRef = useRef(null);
@@ -37,9 +36,6 @@ function About() {
           <p className="about-headline">I build reliable backends and AI systems.</p>
           <p>MS in Information Systems at Northeastern. Former SDE Intern at Amazon and Software Engineer at Apexon for two years. I build Spring Boot microservices, event-driven systems, and RAG and MCP-based AI tools.</p>
           <div className="hero-buttons">
-            <a className="meeting-btn" href={resume} download="Yash_Vyas_Resume.pdf">
-              Resume
-            </a>
             <a className="meeting-btn" href="mailto:vyas.yash@northeastern.edu">
               Email Me
             </a>
