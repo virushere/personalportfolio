@@ -1,7 +1,8 @@
 .education {
+  --edu-pad: 100px;
   position: relative;
   background-color: #ffffff;
-  padding: 100px 0;
+  padding: var(--edu-pad) 0;
   overflow: hidden;
 }
 
@@ -37,10 +38,29 @@
 }
 
 .education-container {
+  --timeline-inset: 20px; /* matches the horizontal padding below */
+  --line-center: 50%; /* line position inside .timeline, used by the dots */
+  --line-x: 50%; /* same line, measured in this container */
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--timeline-inset);
   position: relative;
+  display: flow-root; /* keep the last item's margin inside, so the line reaches the bottom */
+}
+
+/* Vertical line spanning the whole section, from the section above to the
+   one below. It extends past this container by the section padding. */
+.education-container::before {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  top: calc(-1 * var(--edu-pad));
+  bottom: calc(-1 * var(--edu-pad));
+  left: var(--line-x);
+  transform: translateX(-50%);
+  z-index: 1;
+  border-radius: 2px;
 }
 
 .expanded-view {
@@ -186,24 +206,9 @@
 
 /* Timeline */
 .timeline {
-  --line-center: 50%;
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-/* Vertical line, drawn in the same box as the items so the dots line up */
-.timeline::before {
-  content: '';
-  position: absolute;
-  width: 3px;
-  background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-  top: 0;
-  bottom: 0;
-  left: var(--line-center);
-  transform: translateX(-50%);
-  z-index: 1;
-  border-radius: 2px;
 }
 
 /* Timeline items */
@@ -326,11 +331,12 @@
 /* Small screens (mobile landscape) */
 @media screen and (max-width: 768px) {
   .education {
-    padding: 60px 0;
+    --edu-pad: 60px;
   }
   
-  .timeline {
+  .education-container {
     --line-center: 24px;
+    --line-x: calc(var(--timeline-inset) + var(--line-center));
   }
   
   .education h2 {
@@ -373,7 +379,7 @@
 /* Extra small screens (mobile portrait) */
 @media screen and (max-width: 576px) {
   .education {
-    padding: 50px 0;
+    --edu-pad: 50px;
   }
   
   .education h2 {
@@ -446,7 +452,7 @@
 }
 
 /* Vertical timeline line */
-.dark-theme .timeline::before {
+.dark-theme .education-container::before {
   background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
 }
 
