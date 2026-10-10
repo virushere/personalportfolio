@@ -71,6 +71,24 @@
   box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
 }
 
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+a.meeting-btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.about-text .about-headline {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
 .meeting-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);

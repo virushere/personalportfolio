@@ -10,7 +10,7 @@ function About() {
     // Initialize typewriter after component mounts
     if (document.getElementById('job-title')) {
       typewriterRef.current = new Typewriter('#job-title', {
-        strings: ['Software Engineer', 'Software Developer', 'Full Stack Software Engineer'],
+        strings: ['Software Engineer', 'Backend Engineer', 'AI Systems Engineer'],
         autoStart: true,
         loop: true,
         deleteSpeed: 50,
@@ -33,18 +33,14 @@ function About() {
           <h1>Hi 👋, I'm a</h1>
           <h2 className="gradient-text">Yash Vyas</h2>
           <h3 id="job-title">Software Engineer</h3>
-          <p>I'm Yash Vyas, a software developer dedicated to making the world a better place one line of code at a time.</p>
-          <button
-            className="meeting-btn"
-            onClick={() =>
-              window.open(
-                "https://outlook.office.com/bookwithme/user/f2b1606ca6ac412a913b0c4a74bfb085@northeastern.edu?anonymous&ep=plink",
-                "_blank"
-              )
-            }
-          >
-            Book Meeting
-          </button>        </div>
+          <p className="about-headline">I build reliable backends and AI systems.</p>
+          <p>MS in Information Systems at Northeastern. Former SDE Intern at Amazon and Software Engineer at Apexon for two years. I build Spring Boot microservices, event-driven systems, and RAG and MCP-based AI tools.</p>
+          <div className="hero-buttons">
+            <a className="meeting-btn" href="mailto:vyas.yash@northeastern.edu">
+              Email Me
+            </a>
+          </div>
+        </div>
         <div className="about-image-container">
           <div className="image-frame">
             <div className="plus-sign">+</div>

@@ -7,6 +7,7 @@ import ProjectCarousel from './components/ProjectCarousel'
 // import Work from './components/Work';
 // import Projects from './components/Projects';
 import Skills from './components/Skills';
+import BeyondCode from './components/BeyondCode';
 import Testimonials from './components/Testimonials';
 // import Contact from './components/Contact';
 import './App.css';
@@ -31,6 +32,11 @@ function App() {
         height="4px" 
         colors={['#ff66c4', '#7b68ee', '#00bfff']} 
       />   
+      <BeyondCode />
+      <GradientLine 
+        height="4px" 
+        colors={['#00bfff', '#7b68ee', '#ff66c4']} 
+      />
       <Testimonials />
         {/* <Contact />  */}
       {/* Add Footer Here if needed */}

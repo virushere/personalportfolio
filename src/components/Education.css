@@ -1,7 +1,8 @@
 .education {
+  --edu-pad: 100px;
   position: relative;
   background-color: #ffffff;
-  padding: 100px 0;
+  padding: var(--edu-pad) 0;
   overflow: hidden;
 }
 
@@ -36,25 +37,30 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Main vertical line that runs through the entire section */
-.education::before {
+.education-container {
+  --timeline-inset: 20px; /* matches the horizontal padding below */
+  --line-center: 50%; /* line position inside .timeline, used by the dots */
+  --line-x: 50%; /* same line, measured in this container */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--timeline-inset);
+  position: relative;
+  display: flow-root; /* keep the last item's margin inside, so the line reaches the bottom */
+}
+
+/* Vertical line spanning the whole section, from the section above to the
+   one below. It extends past this container by the section padding. */
+.education-container::before {
   content: '';
   position: absolute;
   width: 3px;
   background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-  top: 0;
-  bottom: 0;
-  left: 50%;
+  top: calc(-1 * var(--edu-pad));
+  bottom: calc(-1 * var(--edu-pad));
+  left: var(--line-x);
   transform: translateX(-50%);
   z-index: 1;
   border-radius: 2px;
-}
-
-.education-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
 }
 
 .expanded-view {
@@ -72,21 +78,130 @@
 }
 
 .expanded-content {
+  position: relative;
   background: white;
-  padding: 30px;
-  border-radius: 10px;
-  max-width: 600px;
+  padding: 36px 32px 24px;
+  border-radius: 16px;
+  max-width: 640px;
   width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
   cursor: default;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.expanded-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.expanded-close:hover {
+  background: #e2e8f0;
+}
+
+.expanded-image {
+  display: block;
+  width: calc(100% + 64px);
+  margin: -36px -32px 24px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center 45%;
+  border-radius: 16px 16px 0 0;
+}
+
+.expanded-close {
+  z-index: 1;
+}
+
+.expanded-content .timeline-title {
+  padding: 0 36px;
 }
 
 .expanded-description {
-  margin-top: 20px;
+  margin: 20px 0 0;
+  padding-left: 20px;
   line-height: 1.6;
+  text-align: left;
+  color: #334155;
 }
 
-.timeline-content {
+.expanded-description li + li {
+  margin-top: 10px;
+}
+
+.expanded-description li::marker {
+  color: #6366f1;
+}
+
+.expanded-hint {
+  margin: 24px 0 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.timeline-content.clickable {
   cursor: pointer;
+}
+
+.timeline-highlights {
+  margin: 16px 0 0;
+  padding: 16px 0 0 18px;
+  border-top: 1px solid #e2e8f0;
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #475569;
+}
+
+.timeline-highlights li + li {
+  margin-top: 8px;
+}
+
+.timeline-highlights li::marker {
+  color: #6366f1;
+}
+
+.view-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 8px 14px;
+  border: 1px solid #c7d2fe;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-more-arrow {
+  transition: transform 0.2s ease;
+}
+
+.timeline-content.clickable:hover .view-more-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.timeline-content.clickable:hover .view-more-arrow {
+  transform: translateX(3px);
 }
 
 /* Timeline */
@@ -128,7 +243,6 @@
 }
 
 .timeline-content:hover {
-  transform: translateX(5px);
   box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
   border-color: #c7d2fe;
 }
@@ -148,11 +262,11 @@
 
 /* Position dots */
 .timeline-item.right .timeline-dot {
-  left: -10px;
+  left: -12px;
 }
 
 .timeline-item.left .timeline-dot {
-  right: -10px;
+  right: -12px;
 }
 
 /* Timeline content styling */
@@ -217,12 +331,12 @@
 /* Small screens (mobile landscape) */
 @media screen and (max-width: 768px) {
   .education {
-    padding: 60px 0;
+    --edu-pad: 60px;
   }
   
-  .education::before {
-    left: 31px;
-    transform: none;
+  .education-container {
+    --line-center: 24px;
+    --line-x: calc(var(--timeline-inset) + var(--line-center));
   }
   
   .education h2 {
@@ -244,7 +358,7 @@
   
   .timeline-item.right .timeline-dot,
   .timeline-item.left .timeline-dot {
-    left: 21px;
+    left: calc(var(--line-center) - 12px);
     right: auto;
   }
   
@@ -265,7 +379,7 @@
 /* Extra small screens (mobile portrait) */
 @media screen and (max-width: 576px) {
   .education {
-    padding: 50px 0;
+    --edu-pad: 50px;
   }
   
   .education h2 {
@@ -285,7 +399,7 @@
   
   .timeline-item.right .timeline-dot,
   .timeline-item.left .timeline-dot {
-    left: 23px;
+    left: calc(var(--line-center) - 8px);
   }
   
   .timeline-content {
@@ -314,7 +428,7 @@
   
   .timeline-item.right .timeline-dot,
   .timeline-item.left .timeline-dot {
-    left: 24px;
+    left: calc(var(--line-center) - 7px);
   }
   
   .timeline-title {
@@ -338,7 +452,7 @@
 }
 
 /* Vertical timeline line */
-.dark-theme .education::before {
+.dark-theme .education-container::before {
   background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
 }
 
@@ -352,7 +466,6 @@
 }
 
 .dark-theme .timeline-content:hover {
-  transform: translateX(5px);
   box-shadow: 0 8px 30px rgba(129, 140, 248, 0.2);
   border-color: #475569;
 }
@@ -385,11 +498,36 @@
 
 /* Expanded content */
 .dark-theme .expanded-content {
-  background: #2d2d2d;
+  background: #1e293b;
   color: #ffffff;
 }
 
 /* Expanded description */
-.dark-theme .expanded-description {
-  color: #cccccc;
+.dark-theme .expanded-description,
+.dark-theme .timeline-highlights {
+  color: #cbd5e1;
+}
+
+.dark-theme .timeline-highlights {
+  border-top-color: #334155;
+}
+
+.dark-theme .expanded-close {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+.dark-theme .expanded-close:hover {
+  background: #475569;
+}
+
+.dark-theme .view-more-btn {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: #4f46e5;
+  color: #a5b4fc;
+}
+
+.dark-theme .timeline-highlights li::marker,
+.dark-theme .expanded-description li::marker {
+  color: #818cf8;
 }

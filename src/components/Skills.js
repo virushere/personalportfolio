@@ -1,34 +1,54 @@
 import React from 'react';
 import './Skills.css';
 import { motion } from 'framer-motion';
-import { FaCode, FaDatabase, FaReact, FaTools, FaCloud } from 'react-icons/fa';
+import { FaCode, FaServer, FaRobot, FaDatabase, FaExchangeAlt, FaCloud, FaChartLine, FaReact, FaTools } from 'react-icons/fa';
 
 const Skills = () => {
   const skillSets = [
     {
-      category: "Programming Languages",
-      skills: ["C#", "Java", "Python", "SQL", "TypeScript", "JavaScript", "C", "C++"],
+      category: "Languages",
+      skills: ["Java", "Python", "Go", "TypeScript", "JavaScript", "C#", "SQL"],
       icon: <FaCode />
     },
     {
+      category: "Backend",
+      skills: ["Spring Boot", "Spring Security", "FastAPI", "ASP.NET", "Node.js", "Express", "Hibernate"],
+      icon: <FaServer />
+    },
+    {
+      category: "AI / LLM",
+      skills: ["RAG", "MCP Servers", "Agentic Orchestration", "pgvector", "Embeddings", "Qdrant", "Llama", "Claude Code"],
+      icon: <FaRobot />
+    },
+    {
       category: "Databases",
-      skills: ["MS SQL", "PostgreSQL", "MySQL", "Elasticsearch", "Firebase", "MongoDB", "Hibernate"],
+      skills: ["PostgreSQL", "SQL Server", "MySQL", "MongoDB", "Redis", "Elasticsearch", "DynamoDB", "DuckDB"],
       icon: <FaDatabase />
     },
     {
-      category: "Web Technologies",
-      skills: ["Spring Boot", "ASP .NET", "HTML5", "CSS", "React", "Redux", "Node.js", "Express.js", "JSP", "XML", "JSON"],
+      category: "Messaging",
+      skills: ["Kafka", "RabbitMQ", "Redpanda"],
+      icon: <FaExchangeAlt />
+    },
+    {
+      category: "Cloud & DevOps",
+      skills: ["AWS (EC2, VPC, DynamoDB, CloudWatch)", "Terraform", "Docker", "GitHub Actions"],
+      icon: <FaCloud />
+    },
+    {
+      category: "Observability",
+      skills: ["Prometheus", "Grafana", "Loki", "OpenTelemetry", "Tempo", "Micrometer"],
+      icon: <FaChartLine />
+    },
+    {
+      category: "Frontend",
+      skills: ["React", "Redux", "Vue.js", "Tailwind CSS", "Material-UI"],
       icon: <FaReact />
     },
     {
-      category: "Tools/Frameworks",
-      skills: ["Git", "Jira", "SourceTree", "Postman", "Bruno", "Eureka", "Docker", "Kafka", "Prometheus", "Grafana"],
+      category: "Testing & Tools",
+      skills: ["TestContainers", "Postman", "Bruno", "Git"],
       icon: <FaTools />
-    },
-    {
-      category: "AWS Cloud Services",
-      skills: ["EC2", "CloudWatch", "DynamoDB"],
-      icon: <FaCloud />
     }
   ];
 
